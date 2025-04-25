@@ -23,38 +23,49 @@ export function Hero() {
 
     let animationFrameId: number
     let time = 0
+    let lastTime = 0
+    const fps = 30 // Lower FPS for better performance
+    const fpsInterval = 1000 / fps
 
-    const animate = () => {
-      time += 0.002
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    // Reduce grid density significantly
+    const rows = 20
+    const cols = 20
 
-      const rows = 50
-      const cols = 50
-      const cellWidth = canvas.width / cols
-      const cellHeight = canvas.height / rows
+    const animate = (timestamp: number) => {
+      const elapsed = timestamp - lastTime
+      
+      if (elapsed > fpsInterval) {
+        lastTime = timestamp - (elapsed % fpsInterval)
+        
+        time += 0.002
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.1)"
-      ctx.lineWidth = 1
+        const cellWidth = canvas.width / cols
+        const cellHeight = canvas.height / rows
 
-      for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-          const x = j * cellWidth
-          const y = i * cellHeight
-          const distanceFromCenter = Math.sqrt(
-            Math.pow(x - canvas.width / 2, 2) + Math.pow(y - canvas.height / 2, 2)
-          )
-          const wave = Math.sin(distanceFromCenter * 0.03 + time) * 20
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.1)"
+        ctx.lineWidth = 1
 
-          ctx.beginPath()
-          ctx.arc(x + wave, y + wave, 1, 0, Math.PI * 2)
-          ctx.stroke()
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < cols; j++) {
+            const x = j * cellWidth
+            const y = i * cellHeight
+            const distanceFromCenter = Math.sqrt(
+              Math.pow(x - canvas.width / 2, 2) + Math.pow(y - canvas.height / 2, 2)
+            )
+            const wave = Math.sin(distanceFromCenter * 0.03 + time) * 20
+
+            ctx.beginPath()
+            ctx.arc(x + wave, y + wave, 1, 0, Math.PI * 2)
+            ctx.stroke()
+          }
         }
       }
 
       animationFrameId = requestAnimationFrame(animate)
     }
 
-    animate()
+    animationFrameId = requestAnimationFrame(animate)
 
     return () => {
       window.removeEventListener("resize", resizeCanvas)
