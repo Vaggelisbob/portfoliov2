@@ -94,13 +94,13 @@ export function Hero() {
           </p>
           <div className="mt-8 flex gap-4">
             <a
-              href="#contact"
+              href="/contact"
               className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-black transition-colors hover:bg-white/90 sm:text-base"
             >
               Get in Touch
             </a>
             <a
-              href="#portfolio"
+              href="/portfolio"
               className="rounded-md border border-white bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 sm:text-base"
             >
               View Portfolio
