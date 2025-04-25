@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
+// Vercel deployment trigger: 2023-06-21T12:34:56Z
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
