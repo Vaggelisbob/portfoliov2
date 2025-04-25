@@ -75,7 +75,7 @@ export default function Services() {
     <section className="py-8 sm:py-12 md:py-16 overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Our Services</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">My Services</h1>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
             Comprehensive solutions for your digital needs
           </p>
