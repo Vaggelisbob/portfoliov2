@@ -9,40 +9,41 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="py-8 sm:py-12 md:py-16">
+    <section className="py-6 sm:py-10 md:py-16">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-2">
           {/* Contact Form */}
-          <div className="rounded-lg bg-card p-8">
+          <div className="rounded-lg bg-card p-6 sm:p-8 border border-border shadow-md">
             <h1 className="mb-6 text-3xl font-bold">Get in Touch</h1>
             <ContactForm />
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h2 className="mb-4 text-2xl font-semibold">Contact Information</h2>
-              <p className="text-muted-foreground">
-                Contact me via the contact form or directly via my social media.
-              </p>
-            </div>
+          <div className="rounded-lg bg-card p-6 sm:p-8 border border-border shadow-md">
+            <div className="space-y-6">
+              <div>
+                <h2 className="mb-3 text-2xl font-semibold">Contact Information</h2>
+                <p className="text-muted-foreground">
+                  Contact me via the contact form or directly via my social media.
+                </p>
+              </div>
 
-            <div>
-              <h3 className="mb-2 text-xl font-semibold">Email</h3>
-              <p className="text-muted-foreground">ebomponis@gmail.com</p>
-            </div>
+              <div className="p-3 bg-secondary/50 rounded-md">
+                <h3 className="mb-1 text-xl font-semibold">Email</h3>
+                <p className="text-muted-foreground">ebomponis@gmail.com</p>
+              </div>
 
-            <div>
-              <h3 className="mb-2 text-xl font-semibold">Phone</h3>
-              <p className="text-muted-foreground">(+30) 698 6563 740</p>
-            </div>
+              <div className="p-3 bg-secondary/50 rounded-md">
+                <h3 className="mb-1 text-xl font-semibold">Phone</h3>
+                <p className="text-muted-foreground">(+30) 698 6563 740</p>
+              </div>
 
-            <div>
-              <h3 className="mb-2 text-xl font-semibold">Location</h3>
-              <p className="text-muted-foreground">Athens, Greece</p>
-            </div>
-            
-            <div className="flex gap-4">
+              <div className="p-3 bg-secondary/50 rounded-md">
+                <h3 className="mb-1 text-xl font-semibold">Location</h3>
+                <p className="text-muted-foreground">Athens, Greece</p>
+              </div>
+              
+              <div className="flex gap-4 pt-2">
                 <Link href="https://www.facebook.com/profile.php?id=100008346042367&locale=el_GR" target="_blank" className="text-white/70 hover:text-white transition-colors">
                   <svg className="h-5 w-5" fill="black" viewBox="0 0 24 24">
                     <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
@@ -61,6 +62,7 @@ export default function ContactPage() {
                   </svg>
                 </Link>
               </div>  
+            </div>
           </div>
         </div>
       </div>
