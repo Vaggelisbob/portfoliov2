@@ -15,8 +15,16 @@ const nextConfig = {
   // Optimizations for Vercel
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   compress: true,
+  // Disable telemetry and tracing to fix permission errors
+  telemetry: { 
+    disabled: true 
+  },
+  experimental: {
+    serverComponentsExternalPackages: [],
+    outputFileTracingIgnores: ['.next/**', './**/*'],
+    outputFileTracingRoot: process.cwd(),
+  },
 };
 
 module.exports = nextConfig; 

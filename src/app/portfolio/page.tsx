@@ -17,18 +17,18 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Spiros Barbershop",
+    title: "Spiros Barbershop v2",
     description:
       "A modern website for a barbershop, featuring online booking, service listings, and a gallery of work. Built with Next.js and Tailwind CSS.",
-    image: "/spiros-barbershop.png",
+    image: "/portfolio/spiros-barbershop.png",
     link: "https://spiros-barbershop.vercel.app/",
     technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   },
   {
-    title: "Portfolio Website",
+    title: "Spiros Barbershop v1",
     description:
       "My personal portfolio website showcasing my projects and skills. Built with Next.js, TypeScript, and Tailwind CSS.",
-    image: "/portfolio.png",
+    image: "/portfolio/spiros-barbershop-v1.png",
     link: "https://vaggelis-bobonhs.vercel.app/",
     technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   },

@@ -37,7 +37,10 @@ export function Navbar() {
                   <NavigationMenuItem key={item.title}>
                     <NavigationMenuLink
                       asChild
-                      className={cn(navigationMenuTriggerStyle(), "px-3 py-2 text-[#1A1A1A]/90 hover:text-[#1A1A1A] hover:bg-[#1A1A1A]/5")}
+                      className={cn(
+                        navigationMenuTriggerStyle(), 
+                        "px-3 py-2 text-[#1A1A1A]/90 hover:text-[#1A1A1A] bg-transparent hover:bg-gray-200 data-[state=open]:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent"
+                      )}
                     >
                       <Link href={item.href}>
                         {item.title}
