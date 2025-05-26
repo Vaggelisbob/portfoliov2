@@ -28,17 +28,17 @@ const projects: Project[] = [
   {
     title: "Spiros Barbershop v2",
     description:
-      "A modern website for a barbershop, featuring online booking, service listings, and a gallery of work. Built with Next.js and Tailwind CSS.",
+      "A modern website for a barbershop, featuring online booking with Cal&apos;s API, service listings, admin dashboard with upcoming bookings from db with customers info. Built with Next.js and Tailwind CSS.",
     image: "/portfolio/spiros-barbershop.png",
-    link: "https://spiros-barbershop.vercel.app/",
+    link: "https://spiros-barber-shop.vercel.app",
     technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   },
   {
     title: "Spiros Barbershop v1",
     description:
-      "My personal portfolio website showcasing my projects and skills. Built with Next.js, TypeScript, and Tailwind CSS.",
+      "A Barber Shop website with online booking system without an external API, admin dashboard with bookings and metrics and oauth. Built with Next.js, TypeScript, and Tailwind CSS.",
     image: "/portfolio/spiros-barbershop-v1.png",
-    link: "https://vaggelis-bobonhs.vercel.app/",
+    link: "https://spiros-barber-shop.web.app",
     technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
   },
 ]
