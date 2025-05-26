@@ -20,10 +20,10 @@ const projects: Project[] = [
   {
     title: "Task Manager App",
     description:
-      "A full-stack task management application with user authentication, real-time updates, and collaborative features. Built with Next.js, TypeScript, and Atlas.",
+      "A full-stack task management application with user authentication, real-time updates, and collaborative features. Built with Next.js, TypeScript, and MongoDB.",
     image: "/portfolio/task-manager.png",
     link: "#",
-    technologies: ["Next.js", "React", "TypeScript", "Atlas", "PostgreSQL", "Tailwind CSS"],
+    technologies: ["Next.js", "React", "TypeScript", "MongoDB", "PostgreSQL", "Tailwind CSS"],
   },
   {
     title: "Spiros Barbershop v2",
