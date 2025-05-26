@@ -100,8 +100,11 @@ export function Hero() {
           <h1 className="text-5xl font-black tracking-tighter text-white sm:text-6xl md:text-7xl lg:text-8xl">
             VAGGELIS BOBONHS
           </h1>
+          <h2 className="text-2xl font-bold text-white/80 sm:text-xl md:text-2xl">
+            Full Stack & WordPress Developer
+          </h2>
           <p className="mt-6 max-w-2xl text-lg text-white/80 sm:text-xl md:text-2xl">
-            Building innovative solutions for tomorrow&apos;s challenges
+          I create modern websites and custom WordPress solutions. Currently transitioning from technical support to full-time development.
           </p>
           <div className="mt-8 flex gap-4">
             <a

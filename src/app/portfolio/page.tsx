@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
   title: "Portfolio | Vaggelis Bobonhs",
@@ -16,6 +17,14 @@ interface Project {
 }
 
 const projects: Project[] = [
+  {
+    title: "Task Manager App",
+    description:
+      "A full-stack task management application with user authentication, real-time updates, and collaborative features. Built with Next.js, TypeScript, and Atlas.",
+    image: "/portfolio/task-manager.png",
+    link: "#",
+    technologies: ["Next.js", "React", "TypeScript", "Atlas", "PostgreSQL", "Tailwind CSS"],
+  },
   {
     title: "Spiros Barbershop v2",
     description:
@@ -51,9 +60,12 @@ export default function PortfolioPage() {
             <Link
               key={project.title}
               href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-lg border bg-card transition-all hover:border-primary"
+              target={project.link === "#" ? undefined : "_blank"}
+              rel={project.link === "#" ? undefined : "noopener noreferrer"}
+              className={cn(
+                "group relative overflow-hidden rounded-lg border bg-card transition-all hover:border-primary",
+                project.link === "#" && "cursor-not-allowed opacity-80"
+              )}
             >
               <div className="aspect-video w-full overflow-hidden">
                 <Image
@@ -63,6 +75,13 @@ export default function PortfolioPage() {
                   height={400}
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                {project.link === "#" && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                    <span className="rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-black">
+                      Coming Soon
+                    </span>
+                  </div>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-semibold">{project.title}</h3>

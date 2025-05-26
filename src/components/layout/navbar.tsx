@@ -2,7 +2,8 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
+import { FileText, ChevronDown } from "lucide-react"
+import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, NavigationMenuContent, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 
 interface NavigationItem {
@@ -13,12 +14,13 @@ interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { title: "Home", href: "/" },
   { title: "Projects", href: "/portfolio" },
-  { title: "Our Services", href: "/services" },
+  { title: "About Me", href: "/about_me" },
   { title: "Get In Touch", href: "/contact" },
 ]
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isCVDropdownOpen, setIsCVDropdownOpen] = useState(false)
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
@@ -48,6 +50,51 @@ export function Navbar() {
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                 ))}
+                {/* CV Button */}
+                <NavigationMenuItem>
+                  <div className="relative">
+                    <button
+                      onClick={() => setIsCVDropdownOpen(!isCVDropdownOpen)}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "px-3 py-2 text-[#1A1A1A]/90 hover:text-[#1A1A1A] bg-transparent hover:bg-gray-100 focus:bg-transparent active:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 flex items-center gap-2"
+                      )}
+                    >
+                      <FileText className="h-4 w-4" />
+                      CV
+                      <ChevronDown className={cn(
+                        "h-4 w-4 transition-transform duration-200",
+                        isCVDropdownOpen ? "rotate-180" : ""
+                      )} />
+                    </button>
+                    {isCVDropdownOpen && (
+                      <div className="absolute right-0 mt-1 w-[200px] bg-white rounded-md shadow-lg border">
+                        <ul className="py-2">
+                          <li>
+                            <Link
+                              href="/ΕΥΑΓΓΕΛΟΣ ΙΩΑΝΝΗΣ ΜΠΟΜΠΟΝΗΣ CV.pdf"
+                              target="_blank"
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              onClick={() => setIsCVDropdownOpen(false)}
+                            >
+                              View CV
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              href="/ΕΥΑΓΓΕΛΟΣ ΙΩΑΝΝΗΣ ΜΠΟΜΠΟΝΗΣ CV.pdf"
+                              download
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                              onClick={() => setIsCVDropdownOpen(false)}
+                            >
+                              Download CV
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
           </div>
@@ -100,6 +147,32 @@ export function Navbar() {
                     </Link>
                   </li>
                 ))}
+                {/* Mobile CV Links */}
+                <li className="pt-2">
+                  <div className="px-3 py-2">
+                    <span className="text-sm font-medium text-white/70">CV Options</span>
+                  </div>
+                  <div className="mt-1 space-y-1">
+                    <Link
+                      href="/ΕΥΑΓΓΕΛΟΣ ΙΩΑΝΝΗΣ ΜΠΟΜΠΟΝΗΣ CV.pdf"
+                      target="_blank"
+                      className="flex items-center gap-2 px-3 py-2.5 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <FileText className="h-4 w-4" />
+                      View CV
+                    </Link>
+                    <Link
+                      href="/ΕΥΑΓΓΕΛΟΣ ΙΩΑΝΝΗΣ ΜΠΟΜΠΟΝΗΣ CV.pdf"
+                      download
+                      className="flex items-center gap-2 px-3 py-2.5 text-sm text-white/90 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <FileText className="h-4 w-4" />
+                      Download CV
+                    </Link>
+                  </div>
+                </li>
               </ul>
             </nav>
           </div>
