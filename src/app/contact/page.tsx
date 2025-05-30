@@ -14,10 +14,12 @@ export default function ContactPage() {
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Contact Form */}
           <div className="order-2 lg:order-1 rounded-lg bg-card p-6 sm:p-8 border border-border shadow-md">
-            <h1 className="mb-6 text-3xl font-bold">Get in Touch</h1>
+            <h1 className="mb-6 text-3xl font-bold">Get in Touch </h1>
             <ContactForm />
           </div>
 
+
+          {/*  */}
           {/* Contact Information */}
           <div className="order-1 lg:order-2 rounded-lg bg-card p-6 sm:p-8 border border-border shadow-md">
             <div className="space-y-6">
