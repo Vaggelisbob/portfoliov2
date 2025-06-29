@@ -18,6 +18,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "DSUTH Exam Bank",
+    description:
+      "A full-stack platform for university students to share and access past exam materials, with user authentication, file uploads, search, and admin moderation. Built with Vite, React, TypeScript, Tailwind CSS, and a Supabase (PostgreSQL) backend.",
+    image: "/portfolio/dsuth-exam-bank.png",
+    link: "https://dsuth-exam-bank.vercel.app",
+    technologies: ["Vite", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL"],
+  },
+  {
     title: "Task Manager App",
     description:
       "A full-stack task management application with user authentication, real-time updates, and collaborative features. Built with Next.js, TypeScript, and MongoDB.",
