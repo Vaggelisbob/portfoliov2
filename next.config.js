@@ -17,14 +17,11 @@ const nextConfig = {
   reactStrictMode: true,
   compress: true,
   // Disable telemetry and tracing to fix permission errors
-  telemetry: { 
-    disabled: true 
-  },
-  experimental: {
-    serverComponentsExternalPackages: [],
-    outputFileTracingIgnores: ['.next/**', './**/*'],
-    outputFileTracingRoot: process.cwd(),
-  },
+  // telemetry: { 
+  //   disabled: true 
+  // },
+  serverExternalPackages: [],
+  outputFileTracingRoot: process.cwd(),
 };
 
 module.exports = nextConfig; 

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, Suspense, lazy } from "react"
 import { cn } from "@/lib/utils"
 import { Card, CardContent } from "@/components/ui/card"
 import { 
@@ -17,6 +17,8 @@ import {
   Clock,
   Zap
 } from "lucide-react"
+
+const SkillsSection = lazy(() => import("../../components/about-me/skills-section") as Promise<{ default: React.ComponentType<{ skills: any }> }>);
 
 export default function AboutMePage() {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -385,149 +387,9 @@ export default function AboutMePage() {
         </section>
 
         {/* Skills Section */}
-        <section className="mb-24">
-          <Card className="overflow-hidden">
-            <CardContent className="p-8 md:p-12">
-              <div className="mb-8 flex items-center gap-4">
-                <Code2 className="h-8 w-8 text-primary" />
-                <h2 className="text-3xl font-bold">Skills & Technologies</h2>
-              </div>
-              
-              {/* Frontend Development */}
-              <div className="mb-12">
-                <h3 className="mb-6 text-2xl font-semibold">{skills.frontend.title}</h3>
-                <div className="grid gap-8 md:grid-cols-2">
-                  {skills.frontend.categories.map((category) => (
-                    <div key={category.title} className="space-y-4">
-                      <h4 className="text-lg font-medium">{category.title}</h4>
-                      <ul className="space-y-2">
-                        {category.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Backend Development */}
-              <div className="mb-12">
-                <h3 className="mb-6 text-2xl font-semibold">{skills.backend.title}</h3>
-                <div className="grid gap-8 md:grid-cols-2">
-                  {skills.backend.categories.map((category) => (
-                    <div key={category.title} className="space-y-4">
-                      <h4 className="text-lg font-medium">{category.title}</h4>
-                      <ul className="space-y-2">
-                        {category.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* WordPress Development */}
-              <div className="mb-12">
-                <h3 className="mb-6 text-2xl font-semibold">{skills.wordpress.title}</h3>
-                <div className="grid gap-8 md:grid-cols-2">
-                  {skills.wordpress.categories.map((category) => (
-                    <div key={category.title} className="space-y-4">
-                      <h4 className="text-lg font-medium">{category.title}</h4>
-                      <ul className="space-y-2">
-                        {category.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Development Tools */}
-              <div className="mb-12">
-                <h3 className="mb-6 text-2xl font-semibold">{skills.tools.title}</h3>
-                <div className="grid gap-8 md:grid-cols-3">
-                  {skills.tools.categories.map((category) => (
-                    <div key={category.title} className="space-y-4">
-                      <h4 className="text-lg font-medium">{category.title}</h4>
-                      <ul className="space-y-2">
-                        {category.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Technical Support */}
-              <div className="mb-12">
-                <h3 className="mb-6 text-2xl font-semibold">{skills.support.title}</h3>
-                <div className="grid gap-8 md:grid-cols-2">
-                  {skills.support.categories.map((category) => (
-                    <div key={category.title} className="space-y-4">
-                      <h4 className="text-lg font-medium">{category.title}</h4>
-                      <ul className="space-y-2">
-                        {category.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Soft Skills */}
-              <div className="mb-12">
-                <h3 className="mb-6 text-2xl font-semibold">{skills.soft.title}</h3>
-                <div className="grid gap-8 md:grid-cols-3">
-                  {skills.soft.categories.map((category) => (
-                    <div key={category.title} className="space-y-4">
-                      <h4 className="text-lg font-medium">{category.title}</h4>
-                      <ul className="space-y-2">
-                        {category.items.map((item) => (
-                          <li key={item} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Languages */}
-              <div>
-                <h3 className="mb-6 text-2xl font-semibold">{skills.languages.title}</h3>
-                <ul className="space-y-2">
-                  {skills.languages.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+        <Suspense fallback={<div className="text-center py-12">Loading skills...</div>}>
+          <SkillsSection skills={skills} />
+        </Suspense>
       </div>
     </main>
   )

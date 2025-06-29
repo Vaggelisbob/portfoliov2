@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Image from "next/image"
+import heroBg from '../../../public/hero-bg.jpg'
 
 export function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -24,12 +25,12 @@ export function Hero() {
     let animationFrameId: number
     let time = 0
     let lastTime = 0
-    const fps = 30 // Lower FPS for better performance
+    const fps = 20 // Lower FPS for better performance
     const fpsInterval = 1000 / fps
 
     // Reduce grid density significantly
-    const rows = 20
-    const cols = 20
+    const rows = 12
+    const cols = 12
 
     const animate = (timestamp: number) => {
       const elapsed = timestamp - lastTime
@@ -78,11 +79,12 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-800">
         <Image
-          src="/hero-bg.jpg"
+          src={heroBg}
           alt="Hero background"
           fill
           className="object-cover object-center"
           priority
+          placeholder="blur"
         />
         <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
       </div>
